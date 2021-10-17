@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/graph_main"
+    app:startDestination="@id/nav_main">
+
+    <fragment
+        android:id="@+id/nav_main"
+        android:name="com.datastore.test.presentation.components.MainFragment" />
+
+    <fragment
+        android:id="@+id/nav_shared_preferences"
+        android:name="com.datastore.test.presentation.components.shared.preferences.ui.SharedPreferencesFragment"
+        />
+</navigation>
