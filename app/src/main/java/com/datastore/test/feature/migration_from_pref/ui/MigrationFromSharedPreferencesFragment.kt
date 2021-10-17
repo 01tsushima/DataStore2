@@ -29,7 +29,9 @@ class MigrationFromSharedPreferencesFragment : BaseFragment(R.layout.fragment_mi
     }
 
     override fun initUI() = with(binding) {
-        viewModel.getNotification()
+        switchNotification.setOnCheckedChangeListener { _, isChecked ->
+            viewModel.notification(subscribe = isChecked)
+        }
     }
 
     override fun onBindStates() {

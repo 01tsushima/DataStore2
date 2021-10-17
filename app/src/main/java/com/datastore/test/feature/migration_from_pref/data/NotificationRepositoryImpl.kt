@@ -10,4 +10,7 @@ constructor(
 ) : NotificationRepository {
     override fun getNotification() =
         notificationLocalDataSource.getSubscribeNotification()
+
+    override fun notification(subscribe: Boolean) =
+        notificationLocalDataSource.notification(subscribe)
 }

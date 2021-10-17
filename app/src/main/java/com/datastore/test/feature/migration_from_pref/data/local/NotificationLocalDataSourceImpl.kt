@@ -8,4 +8,7 @@ class NotificationLocalDataSourceImpl
 ) : NotificationLocalDataSource{
     override fun getSubscribeNotification() =
         notificationPreferences.getSubscribeNotification()
+
+    override fun notification(subscribe: Boolean) =
+        notificationPreferences.notification(subscribe)
 }
