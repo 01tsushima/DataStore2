@@ -1,6 +1,7 @@
 package com.datastore.test.feature.migration_from_pref.data
 
 import com.datastore.test.feature.migration_from_pref.data.local.NotificationLocalDataSource
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class NotificationRepositoryImpl
@@ -8,9 +9,11 @@ class NotificationRepositoryImpl
 constructor(
     private val notificationLocalDataSource: NotificationLocalDataSource
 ) : NotificationRepository {
-    override fun getNotification() =
+    override fun getNotification(): Flow<Boolean> =
         notificationLocalDataSource.getSubscribeNotification()
 
-    override fun notification(subscribe: Boolean) =
-        notificationLocalDataSource.notification(subscribe)
+    override suspend fun notification(subscribe: Boolean) {
+        val l = 0
+        return notificationLocalDataSource.notification(subscribe)
+    }
 }

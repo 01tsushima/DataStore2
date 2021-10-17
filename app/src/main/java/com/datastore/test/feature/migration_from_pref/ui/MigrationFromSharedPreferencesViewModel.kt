@@ -1,5 +1,6 @@
 package com.datastore.test.feature.migration_from_pref.ui
 
+import androidx.lifecycle.viewModelScope
 import com.datastore.test.core.base.BaseViewModel
 import com.datastore.test.feature.migration_from_pref.domain.GetSubscribeUseCase
 import com.datastore.test.feature.migration_from_pref.domain.SubscribeNotificationUseCase
@@ -12,9 +13,12 @@ constructor(
     private val getSubscribeUseCase: GetSubscribeUseCase
 ) : BaseViewModel() {
 
-    fun notification(subscribe: Boolean) =
-        subscribeNotificationUseCase.invoke(subscribe)
+    val notification = getSubscribeUseCase.invoke()
 
-    fun getSubscribe(): Boolean =
-        getSubscribeUseCase.invoke()
+    fun notification(subscribe: Boolean) {
+        val l = 0
+        viewModelScope.execute {
+            subscribeNotificationUseCase.invoke(subscribe)
+        }
+    }
 }

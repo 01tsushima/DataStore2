@@ -6,13 +6,13 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.rxjava2.RxPreferenceDataStoreBuilder
 import androidx.datastore.rxjava2.RxDataStore
+import com.datastore.test.DatastoreApp
 import com.datastore.test.di.scope.PerApplication
 import com.datastore.test.feature.migration_from_pref.data.local.NotificationPreferences
-import com.datastore.test.util.dataStore
+import com.datastore.test.core.dataStore
 
 import dagger.Module
 import dagger.Provides
-import javax.inject.Singleton
 
 @Module
 class ApplicationModule {

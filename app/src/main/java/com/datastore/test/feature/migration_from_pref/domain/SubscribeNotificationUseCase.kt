@@ -7,6 +7,6 @@ class SubscribeNotificationUseCase
 @Inject constructor(
     private val notificationRepository: NotificationRepository
 ) {
-    fun invoke(isSubscribe: Boolean) =
+    suspend fun invoke(isSubscribe: Boolean) =
         notificationRepository.notification(isSubscribe)
 }
