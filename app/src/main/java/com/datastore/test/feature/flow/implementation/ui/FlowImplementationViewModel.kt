@@ -14,16 +14,16 @@ class FlowImplementationViewModel @Inject constructor(
     private val fetchLocalTokenUseCase: FetchLocalTokenUseCase
 ) : BaseViewModel() {
 
-    val showTokenFlow = fetchLocalTokenUseCase.token.distinctUntilChanged()
+    val showTokenFlow = fetchLocalTokenUseCase.invoke().distinctUntilChanged()
 
     fun login(login: String, password: String) {
         viewModelScope.execute {
-            val token = getRemoteTokenUseCase.getToken(login, password)
+            val token = getRemoteTokenUseCase.invoke(login, password)
             saveToken(token)
         }
     }
 
     private fun saveToken(token: String) {
-        viewModelScope.execute { saveTokenUseCase.saveToken(token) }
+        viewModelScope.execute { saveTokenUseCase.invoke(token) }
     }
 }

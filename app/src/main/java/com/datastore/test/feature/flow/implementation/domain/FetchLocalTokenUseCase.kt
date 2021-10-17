@@ -4,7 +4,10 @@ import com.datastore.test.feature.flow.implementation.data.repository.FlowImplem
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class FetchLocalTokenUseCase @Inject constructor(repository:FlowImplementationRepository) {
+class FetchLocalTokenUseCase
+@Inject constructor(private val repository: FlowImplementationRepository) {
 
-    val token: Flow<String?> = repository.token
+    fun invoke(): Flow<String?> {
+        return repository.token
+    }
 }

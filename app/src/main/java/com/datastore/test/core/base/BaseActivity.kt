@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import com.datastore.test.R
-import com.datastore.test.core.lazyNavController
+import com.datastore.test.core.extensions.lazyNavController
 
 abstract class BaseActivity(@LayoutRes layoutResourceId: Int, navControllerId: Int = R.id.nav_host) :
     AppCompatActivity(layoutResourceId) {

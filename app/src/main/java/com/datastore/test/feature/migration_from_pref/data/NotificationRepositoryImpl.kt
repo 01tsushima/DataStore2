@@ -13,7 +13,10 @@ constructor(
         notificationLocalDataSource.getSubscribeNotification()
 
     override suspend fun notification(subscribe: Boolean) {
-        val l = 0
-        return notificationLocalDataSource.notification(subscribe)
+         notificationLocalDataSource.setNotification(subscribe)
+    }
+
+    override suspend fun setNotificationFromShared(subscribe: Boolean) {
+        notificationLocalDataSource.setNotificationFromShared(subscribe)
     }
 }

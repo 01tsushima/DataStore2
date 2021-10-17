@@ -5,7 +5,7 @@ import javax.inject.Inject
 
 class GetRemoteTokenUseCase @Inject constructor(private val repository: FlowImplementationRepository) {
 
-    suspend fun getToken(login:String,password:String):String{
+    suspend fun invoke(login:String,password:String):String{
         return repository.login(login,password)
     }
 }

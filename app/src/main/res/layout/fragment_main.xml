@@ -24,4 +24,13 @@
         android:text="@string/flow_implementation"
         app:strokeColor="@color/purple_200" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mb_migration_from_shared"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/migration_from_shared"
+        app:strokeColor="@color/purple_200" />
+
 </LinearLayout>

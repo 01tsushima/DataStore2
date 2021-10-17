@@ -1,8 +1,8 @@
 package com.datastore.test
 
 import android.app.Application
-import com.datastore.test.di.ApplicationComponent
-import com.datastore.test.di.DaggerApplicationComponent
+import com.datastore.test.di.application.ApplicationComponent
+import com.datastore.test.di.application.DaggerApplicationComponent
 
 class DatastoreApp : Application() {
 

@@ -4,7 +4,6 @@ import com.datastore.test.feature.migration_from_pref.data.NotificationRepositor
 import com.datastore.test.feature.migration_from_pref.data.NotificationRepositoryImpl
 import com.datastore.test.feature.migration_from_pref.data.local.NotificationLocalDataSource
 import com.datastore.test.feature.migration_from_pref.data.local.NotificationLocalDataSourceImpl
-import com.datastore.test.feature.migration_from_pref.data.local.NotificationLocalSourceDataStorage
 import dagger.Binds
 import dagger.Module
 
@@ -14,5 +13,5 @@ abstract class MigrateFromSharedPreferencesDataModule {
     internal abstract fun bindNotificationRepository(notificationRepositoryImpl: NotificationRepositoryImpl) : NotificationRepository
 
     @Binds
-    internal abstract fun bindNotificationLocalSource(notificationLocalDataSourceImpl: NotificationLocalSourceDataStorage): NotificationLocalDataSource
+    internal abstract fun bindNotificationLocalSource(notificationLocalDataSourceImpl: NotificationLocalDataSourceImpl): NotificationLocalDataSource
 }

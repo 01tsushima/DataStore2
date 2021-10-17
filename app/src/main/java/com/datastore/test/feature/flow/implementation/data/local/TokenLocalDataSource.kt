@@ -4,7 +4,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface TokenLocalDataSource {
 
-    fun token(): Flow<String>
+    val  token: Flow<String>
 
     suspend fun saveToken(string: String)
 }

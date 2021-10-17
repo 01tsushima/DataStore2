@@ -7,7 +7,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.datastore.test.DatastoreApp
 import com.datastore.test.R
 import com.datastore.test.core.base.BaseFragment
-import com.datastore.test.core.observe
+import com.datastore.test.core.extensions.observe
 import com.datastore.test.databinding.FragmentFlowImplementationBinding
 import javax.inject.Inject
 

@@ -5,4 +5,5 @@ import kotlinx.coroutines.flow.Flow
 interface NotificationRepository {
     fun getNotification(): Flow<Boolean>
     suspend fun notification(subscribe: Boolean)
+    suspend fun setNotificationFromShared(subscribe: Boolean)
 }

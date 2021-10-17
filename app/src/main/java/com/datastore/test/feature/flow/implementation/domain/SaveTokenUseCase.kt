@@ -5,7 +5,7 @@ import javax.inject.Inject
 
 class SaveTokenUseCase @Inject constructor(private val repository: FlowImplementationRepository) {
 
-    suspend fun saveToken(token:String){
+    suspend fun invoke(token: String) {
         repository.saveToken(token)
     }
 }

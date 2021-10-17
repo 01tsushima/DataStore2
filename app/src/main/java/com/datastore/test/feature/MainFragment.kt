@@ -17,6 +17,10 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
         mbFlowImplementation.setOnClickListener {
             navController.navigate(R.id.nav_flow_implementation)
         }
+
+        mbMigrationFromShared.setOnClickListener {
+            navController.navigate(R.id.nav_migration)
+        }
     }
 
     override fun onBindStates() {

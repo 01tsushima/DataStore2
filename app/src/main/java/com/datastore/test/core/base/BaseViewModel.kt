@@ -4,9 +4,9 @@ import android.content.res.Resources
 import androidx.annotation.StringRes
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.datastore.test.core.EventFlow
-import com.datastore.test.core.JobManager
-import com.datastore.test.core.StateEventFlow
+import com.datastore.test.core.async.EventFlow
+import com.datastore.test.core.async.JobManager
+import com.datastore.test.core.async.StateEventFlow
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/graph_main"
-    app:startDestination="@id/nav_migration">
+    app:startDestination="@id/nav_main">
 
     <fragment
         android:id="@+id/nav_main"
@@ -10,7 +10,7 @@
 
     <fragment
         android:id="@+id/nav_shared_preferences"
-        android:name="com.datastore.test.feature.shared.ui.SharedPreferencesFragment" />
+        android:name="com.datastore.test.feature.proto.ui.ProtoFragment" />
     <fragment
         android:id="@+id/nav_migration"
         android:name="com.datastore.test.feature.migration_from_pref.ui.MigrationFromSharedPreferencesFragment"
