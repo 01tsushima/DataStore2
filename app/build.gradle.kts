@@ -71,4 +71,6 @@ dependencies {
     kapt("com.google.dagger:dagger-compiler:2.39.1")
 
     implementation ("com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.0-beta01")
+
+    implementation ("ru.surfstudio.android:easyadapter:7.0.1")
 }

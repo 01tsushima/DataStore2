@@ -7,9 +7,10 @@
         <entry key="app/src/main/res/layout/fragment_authorization.xml" value="0.15374873353596757" />
         <entry key="app/src/main/res/layout/fragment_flow_implementation.xml" value="0.15374873353596757" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_migration_from_shared_preferences.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/fragment_migration_from_shared_preferences.xml" value="0.15374873353596757" />
         <entry key="app/src/main/res/layout/fragment_shared_preferences.xml" value="0.15374873353596757" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.15374873353596757" />
+        <entry key="app/src/main/res/layout/item_tags.xml" value="0.15374873353596757" />
       </map>
     </option>
   </component>
