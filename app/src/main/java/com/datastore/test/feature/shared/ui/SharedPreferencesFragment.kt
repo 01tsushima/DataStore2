@@ -26,6 +26,10 @@ class SharedPreferencesFragment : BaseFragment(R.layout.fragment_shared_preferen
         }
     }
 
+    override fun onBindStates() {
+
+    }
+
 
     private fun injectComponents() {
         DatastoreApp.component()

@@ -1,30 +1,24 @@
 package com.datastore.test.feature.flow.implementation.di
 
-import com.datastore.test.di.scope.PerWidget
-import com.datastore.test.feature.flow.implementation.domain.FetchLocalTokenUseCase
-import com.datastore.test.feature.flow.implementation.domain.GetRemoteTokenUseCase
-import com.datastore.test.feature.flow.implementation.domain.SaveTokenUseCase
+import com.datastore.test.feature.flow.implementation.data.local.TokenLocalDataSource
+import com.datastore.test.feature.flow.implementation.data.local.TokenLocalDataSourceImpl
+import com.datastore.test.feature.flow.implementation.data.remote.TokenRemoteDataSource
+import com.datastore.test.feature.flow.implementation.data.remote.TokenRemoteDataSourceImpl
+import com.datastore.test.feature.flow.implementation.data.repository.FlowImplementationRepository
+import com.datastore.test.feature.flow.implementation.data.repository.FlowImplementationRepositoryImpl
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
 
 @Module
-class FlowImplementationModule {
+abstract class FlowImplementationModule {
 
-    @Provides
-    @PerWidget
-    fun provideFetchLocalTokenUseCase(): FetchLocalTokenUseCase {
-        return FetchLocalTokenUseCase()
-    }
+    @Binds
+    internal abstract fun bindTokenLocalDataSource(lds: TokenLocalDataSourceImpl):TokenLocalDataSource
 
-    @Provides
-    @PerWidget
-    fun provideGetRemoteTokenUseCase(): GetRemoteTokenUseCase {
-        return GetRemoteTokenUseCase()
-    }
+    @Binds
+    internal abstract fun bindTokenRemoteDataSource(rds:TokenRemoteDataSourceImpl): TokenRemoteDataSource
 
-    @Provides
-    @PerWidget
-    fun provideSaveTokenUseCase(): SaveTokenUseCase {
-        return SaveTokenUseCase()
-    }
+    @Binds
+    internal abstract fun bindFlowImplementationRepository(repository:FlowImplementationRepositoryImpl)
+    :FlowImplementationRepository
 }

@@ -6,10 +6,6 @@ import com.datastore.test.di.DaggerApplicationComponent
 
 class DatastoreApp : Application() {
 
-//    val applicationComponent: ApplicationComponent by lazy {
-//        DaggerApplicationComponent.factory().create(applicationContext)
-//    }
-
     companion object {
         lateinit var application: DatastoreApp
             private set

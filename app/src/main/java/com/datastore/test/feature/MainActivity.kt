@@ -1,4 +1,4 @@
-package com.datastore.test.feature.main
+package com.datastore.test.feature
 
 
 import androidx.navigation.fragment.NavHostFragment

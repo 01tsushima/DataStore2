@@ -14,6 +14,7 @@ abstract class BaseFragment(@LayoutRes private val layoutResourceId: Int) : Frag
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initUI()
+        onBindStates()
     }
 
 
@@ -30,5 +31,7 @@ abstract class BaseFragment(@LayoutRes private val layoutResourceId: Int) : Frag
      * This method will be executed after parent [onCreateView] method
      */
     protected abstract fun initUI()
+
+    protected abstract fun onBindStates()
 
 }

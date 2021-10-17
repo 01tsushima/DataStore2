@@ -5,13 +5,16 @@ import com.datastore.test.core.base.BaseViewModel
 import com.datastore.test.feature.flow.implementation.domain.FetchLocalTokenUseCase
 import com.datastore.test.feature.flow.implementation.domain.GetRemoteTokenUseCase
 import com.datastore.test.feature.flow.implementation.domain.SaveTokenUseCase
+import kotlinx.coroutines.flow.distinctUntilChanged
+import javax.inject.Inject
 
-class FlowImplementationViewModel(
+class FlowImplementationViewModel @Inject constructor(
     private val getRemoteTokenUseCase: GetRemoteTokenUseCase,
     private val saveTokenUseCase: SaveTokenUseCase,
     private val fetchLocalTokenUseCase: FetchLocalTokenUseCase
 ) : BaseViewModel() {
 
+    val showTokenFlow = fetchLocalTokenUseCase.token.distinctUntilChanged()
 
     fun login(login: String, password: String) {
         viewModelScope.execute {
@@ -20,7 +23,7 @@ class FlowImplementationViewModel(
         }
     }
 
-    fun saveToken(token:String){
+    private fun saveToken(token: String) {
         viewModelScope.execute { saveTokenUseCase.saveToken(token) }
     }
 }

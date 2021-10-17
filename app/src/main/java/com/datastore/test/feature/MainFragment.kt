@@ -13,5 +13,13 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
         mbSharedPreferences.setOnClickListener {
             navController.navigate(R.id.nav_shared_preferences)
         }
+
+        mbFlowImplementation.setOnClickListener {
+            navController.navigate(R.id.nav_flow_implementation)
+        }
+    }
+
+    override fun onBindStates() {
+
     }
 }

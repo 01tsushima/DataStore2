@@ -1,11 +1,17 @@
 package com.datastore.test.feature.flow.implementation.di
 
-import com.datastore.test.di.scope.PerWidget
+import com.datastore.test.feature.flow.implementation.ui.FlowImplementationFragment
 import dagger.Subcomponent
 
-@PerWidget
-@Subcomponent(
+@Subcomponent(modules = [FlowImplementationModule::class]
 
 )
 interface FlowImplementationComponent {
+
+    @Subcomponent.Builder
+    interface Builder {
+        fun build(): FlowImplementationComponent
+    }
+
+    fun inject(fragment: FlowImplementationFragment)
 }

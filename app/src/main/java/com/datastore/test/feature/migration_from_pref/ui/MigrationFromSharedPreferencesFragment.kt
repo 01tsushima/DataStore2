@@ -4,7 +4,7 @@ import android.os.Bundle
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.datastore.test.DatastoreApp
 import com.datastore.test.R
-import com.datastore.test.core.BaseFragment
+import com.datastore.test.core.base.BaseFragment
 import com.datastore.test.databinding.FragmentMigrationFromSharedPreferencesBinding
 import javax.inject.Inject
 
@@ -30,5 +30,9 @@ class MigrationFromSharedPreferencesFragment : BaseFragment(R.layout.fragment_mi
 
     override fun initUI() = with(binding) {
         viewModel.getNotification()
+    }
+
+    override fun onBindStates() {
+
     }
 }
