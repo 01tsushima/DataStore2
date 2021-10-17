@@ -7,10 +7,12 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.rxjava2.RxPreferenceDataStoreBuilder
 import androidx.datastore.rxjava2.RxDataStore
 import com.datastore.test.di.scope.PerApplication
+import com.datastore.test.feature.migration_from_pref.data.local.NotificationPreferences
 import com.datastore.test.util.dataStore
 
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
 
 @Module
 class ApplicationModule {
@@ -32,4 +34,9 @@ class ApplicationModule {
     fun provideSharedPrefs(context: Context): SharedPreferences {
         return context.getSharedPreferences("NO_BACKUP_SHARED_PREF", Context.MODE_PRIVATE)
     }
+
+    @Provides
+//    @Singleton
+    fun provideSharedPreferences(context: Context): NotificationPreferences =
+        NotificationPreferences(context)
 }
