@@ -1,4 +1,4 @@
-package com.datastore.test.core
+package com.datastore.test.core.base
 
 import android.os.Bundle
 import android.view.View
