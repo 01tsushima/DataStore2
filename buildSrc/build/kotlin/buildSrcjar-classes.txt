@@ -1,1 +1,1 @@
-/Users/azamatalmazbekov/AndroidStudioProjects/DataStore/buildSrc/build/classes/kotlin/main/Versions.class
+/Users/kimalexandr/AndroidStudioProjects/pet_project/AzaDatastore/buildSrc/build/classes/kotlin/main/Versions.class
