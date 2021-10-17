@@ -1,7 +1,7 @@
-package com.datastore.test.presentation.components.shared.preferences.ui
+package com.datastore.test.feature.shared.ui
 
 import com.datastore.test.core.BaseViewModel
-import com.datastore.test.presentation.components.shared.preferences.domain.SaveQueryUseCase
+import com.datastore.test.feature.shared.domain.SaveQueryUseCase
 
 class SharedPreferencesViewModel(private val saveQueryUseCase: SaveQueryUseCase):BaseViewModel() {
 

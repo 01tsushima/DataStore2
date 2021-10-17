@@ -1,4 +1,4 @@
-package com.datastore.test.presentation.components.shared.preferences.ui
+package com.datastore.test.feature.shared.ui
 
 import android.os.Bundle
 import by.kirich1409.viewbindingdelegate.viewBinding

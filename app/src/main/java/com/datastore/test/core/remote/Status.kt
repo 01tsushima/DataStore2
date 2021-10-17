@@ -1,4 +1,4 @@
-package com.datastore.test.data.remote
+package com.datastore.test.core.remote
 
 enum class Status {
     SUCCESS,

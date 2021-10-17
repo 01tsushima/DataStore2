@@ -1,4 +1,4 @@
-package com.datastore.test.data.remote
+package com.datastore.test.core.remote
 
 data class Resource<out T>(val status: Status, val data: T?, val message: String?) {
 

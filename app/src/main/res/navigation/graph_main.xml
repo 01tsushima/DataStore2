@@ -6,10 +6,10 @@
 
     <fragment
         android:id="@+id/nav_main"
-        android:name="com.datastore.test.presentation.components.MainFragment" />
+        android:name="com.datastore.test.feature.MainFragment" />
 
     <fragment
         android:id="@+id/nav_shared_preferences"
-        android:name="com.datastore.test.presentation.components.shared.preferences.ui.SharedPreferencesFragment"
+        android:name="com.datastore.test.feature.shared.ui.SharedPreferencesFragment"
         />
 </navigation>

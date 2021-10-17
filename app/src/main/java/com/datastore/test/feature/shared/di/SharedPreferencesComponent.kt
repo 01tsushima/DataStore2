@@ -1,7 +1,7 @@
-package com.datastore.test.presentation.components.shared.preferences.di
+package com.datastore.test.feature.shared.di
 
 import com.datastore.test.di.scope.PerWidget
-import com.datastore.test.presentation.components.shared.preferences.ui.SharedPreferencesFragment
+import com.datastore.test.feature.shared.ui.SharedPreferencesFragment
 import dagger.Subcomponent
 
 @PerWidget

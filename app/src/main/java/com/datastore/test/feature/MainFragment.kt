@@ -1,4 +1,4 @@
-package com.datastore.test.presentation.components
+package com.datastore.test.feature
 
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.datastore.test.R

@@ -1,8 +1,8 @@
-package com.datastore.test.presentation.components.shared.preferences.di
+package com.datastore.test.feature.shared.di
 
 import com.datastore.test.di.scope.PerWidget
-import com.datastore.test.presentation.components.shared.preferences.domain.SaveQueryUseCase
-import com.datastore.test.presentation.components.shared.preferences.ui.SharedPreferencesViewModel
+import com.datastore.test.feature.shared.domain.SaveQueryUseCase
+import com.datastore.test.feature.shared.ui.SharedPreferencesViewModel
 import dagger.Module
 import dagger.Provides
 
