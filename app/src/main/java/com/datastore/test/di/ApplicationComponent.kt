@@ -2,6 +2,8 @@ package com.datastore.test.di
 
 import android.content.Context
 import com.datastore.test.di.scope.PerApplication
+import com.datastore.test.feature.migration_from_pref.di.MigrateFromSharedPreferencesDataModule
+import com.datastore.test.feature.migration_from_pref.di.MigrationFromSharedPreferencesComponent
 import com.datastore.test.feature.shared.di.SharedPreferencesComponent
 import dagger.BindsInstance
 import dagger.Component
@@ -19,4 +21,5 @@ interface ApplicationComponent : ApplicationComponentProxy {
     }
 
     fun sharedPreferencesComponentBuilder(): SharedPreferencesComponent.Builder
+    fun migrationFromSharedPreferencesBuilder(): MigrationFromSharedPreferencesComponent.Builder
 }
