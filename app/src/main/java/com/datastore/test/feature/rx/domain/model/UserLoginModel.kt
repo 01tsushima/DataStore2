@@ -1,4 +1,4 @@
-package com.datastore.test.feature.secured.domain.model
+package com.datastore.test.feature.rx.domain.model
 
 
 data class UserLoginModel(

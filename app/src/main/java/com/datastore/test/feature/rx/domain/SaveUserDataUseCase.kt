@@ -1,7 +1,7 @@
-package com.datastore.test.feature.secured.domain
+package com.datastore.test.feature.rx.domain
 
-import com.datastore.test.feature.secured.data.repository.UserDataRepository
-import com.datastore.test.feature.secured.domain.model.UserLoginModel
+import com.datastore.test.feature.rx.data.repository.UserDataRepository
+import com.datastore.test.feature.rx.domain.model.UserLoginModel
 import javax.inject.Inject
 
 class SaveUserDataUseCase @Inject constructor(

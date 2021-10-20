@@ -37,6 +37,13 @@ object PreferenceKeys {
         const val Name = "DataStore"
     }
 
+    object User {
+        private const val Login = "login"
+        private const val Password = "password"
+
+        val FIELD_LOGIN = stringPreferencesKey(Login)
+        val FIELD_PASSWORD = stringPreferencesKey(Password)
+    }
 
     object SecureKey {
         const val KEYSET_NAME = "master_keyset"

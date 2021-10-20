@@ -22,5 +22,5 @@
 
     <fragment
         android:id="@+id/nav_secured_datastore"
-        android:name="com.datastore.test.feature.secured.ui.SecureDatastoreFragment"/>
+        android:name="com.datastore.test.feature.rx.ui.RxDatastoreFragment"/>
 </navigation>

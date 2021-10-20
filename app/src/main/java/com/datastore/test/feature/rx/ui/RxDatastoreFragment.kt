@@ -1,21 +1,19 @@
-package com.datastore.test.feature.secured.ui
+package com.datastore.test.feature.rx.ui
 
 import android.os.Bundle
-import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.datastore.test.DatastoreApp
 import com.datastore.test.R
 import com.datastore.test.core.base.BaseFragment
-import com.datastore.test.core.extensions.observe
-import com.datastore.test.databinding.FragmentSecuredDatastoreBinding
+import com.datastore.test.databinding.FragmentRxDatastoreBinding
 import javax.inject.Inject
 
-class SecureDatastoreFragment : BaseFragment(R.layout.fragment_secured_datastore) {
+class RxDatastoreFragment : BaseFragment(R.layout.fragment_rx_datastore) {
 
-    private val binding by viewBinding(FragmentSecuredDatastoreBinding::bind)
+    private val binding by viewBinding(FragmentRxDatastoreBinding::bind)
 
     @Inject
-    lateinit var viewModel: SecureDatastoreViewModel
+    lateinit var viewModel: RxDatastoreViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,15 +29,15 @@ class SecureDatastoreFragment : BaseFragment(R.layout.fragment_secured_datastore
         }
     }
 
-    override fun onBindStates() = with(lifecycleScope) {
-        observe(viewModel.userData) {
-            binding.textviewResult.text = it
+    override fun onBindStates() {
+        viewModel.userData.subscribe {
+            binding.textviewResult.text = it.toString()
         }
     }
 
     private fun injectComponents() {
         DatastoreApp.component()
-            .secureDataStoreBuilder()
+            .rxDataStoreBuilder()
             .build()
             .inject(this)
     }
