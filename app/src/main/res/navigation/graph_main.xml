@@ -19,4 +19,8 @@
     <fragment
         android:id="@+id/nav_flow_implementation"
         android:name="com.datastore.test.feature.flow.implementation.ui.FlowImplementationFragment"/>
+
+    <fragment
+        android:id="@+id/nav_secured_datastore"
+        android:name="com.datastore.test.feature.secured.ui.SecureDatastoreFragment"/>
 </navigation>

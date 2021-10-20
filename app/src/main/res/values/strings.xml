@@ -1,10 +1,15 @@
 <resources>
     <string name="app_name">DataStore</string>
 
-    <string name="shared_preferences">Shared Preferences</string>
+    <string name="proto_datastore">Proto DataStore</string>
     <string name="search">search</string>
     <string name="flow_implementation">Flow Implementation</string>
     <string name="notification">Notification</string>
     <string name="migration_from_shared">Migration From SharedPreferences</string>
     <string name="change_from_shared">Change from shared</string>
+    <string name="click">Click</string>
+    <string name="clicked">Clicked %1$d times!!</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="secured_datastore">Secured DataStore</string>
 </resources>

@@ -5,7 +5,7 @@ import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 
 object PreferenceKeys {
-    object Token{
+    object Token {
         private const val Token = "Token"
         val FIELD_TOKEN = stringPreferencesKey(Token)
     }
@@ -17,24 +17,30 @@ object PreferenceKeys {
 
     object FileDeliveryOld {
         private const val FileDeliveryOld = "File delivery Old"
-        val FIELD_NOTIFICATION_OLD = booleanPreferencesKey(FileDeliveryOld)
+        val FIELD_DELIVERY_OLD = booleanPreferencesKey(FileDeliveryOld)
     }
 
     object FileDeliveryNew {
         private const val FileDelivery = "File delivery"
-        val FIELD_NOTIFICATION_NEW = intPreferencesKey(FileDelivery)
+        val FIELD_DELIVERY_NEW = intPreferencesKey(FileDelivery)
     }
 
-    object NotificationInSharedPreferences{
+    object NotificationInSharedPreferences {
         const val NOTIFICATION = "Notification"
     }
 
-    object SharedPreferences{
-        const val Name  = "Shared_Prefs"
+    object SharedPreferences {
+        const val Name = "Shared_Prefs"
     }
 
-    object DataStore{
-        const val Name  = "DataStore"
+    object DataStore {
+        const val Name = "DataStore"
     }
 
+
+    object SecureKey {
+        const val KEYSET_NAME = "master_keyset"
+        const val PREFERENCE_FILE = "master_key_preference"
+        const val MASTER_KEY_URI = "android-keystore://master_key"
+    }
 }

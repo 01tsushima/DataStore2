@@ -10,6 +10,7 @@ import dagger.Subcomponent
     modules = [ProtoModule::class, ActivityModule::class]
 )
 interface ProtoComponent {
+
     @Subcomponent.Builder
     interface Builder {
         fun build(): ProtoComponent

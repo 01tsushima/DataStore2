@@ -12,7 +12,8 @@ import java.io.IOException
 
 fun <T> DataStore<Preferences>.getOnes(key: Preferences.Key<T>) = runBlocking { get(key).first() }
 
-fun <T> DataStore<Preferences>.getOnes(key: Preferences.Key<T>, defaultValue: T) = runBlocking { get(key, defaultValue).first() }
+fun <T> DataStore<Preferences>.getOnes(key: Preferences.Key<T>, defaultValue: T) =
+    runBlocking { get(key, defaultValue).first() }
 
 fun <T> DataStore<Preferences>.get(key: Preferences.Key<T>, defaultValue: T) = data
     .catch { if (it is IOException) emit(emptyPreferences()) else throw it }
@@ -27,3 +28,12 @@ suspend fun <T> DataStore<Preferences>.put(key: Preferences.Key<T>, value: T) {
         it[key] = value
     }
 }
+
+suspend fun DataStore<Preferences>.hasKey(key: Preferences.Key<*>) = this.edit { it.contains(key) }
+
+suspend fun DataStore<Preferences>.clearDataStore() {
+    edit {
+        it.clear()
+    }
+}
+

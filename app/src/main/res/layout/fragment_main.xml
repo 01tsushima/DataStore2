@@ -4,15 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     android:paddingHorizontal="16dp"
     android:paddingVertical="20dp">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/mb_shared_preferences"
+        android:id="@+id/mb_proto_datastore"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/shared_preferences"
+        android:text="@string/proto_datastore"
         app:strokeColor="@color/purple_200" />
 
     <com.google.android.material.button.MaterialButton
@@ -31,6 +32,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/migration_from_shared"
+        app:strokeColor="@color/purple_200" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mb_secured_datastore"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/secured_datastore"
         app:strokeColor="@color/purple_200" />
 
 </LinearLayout>

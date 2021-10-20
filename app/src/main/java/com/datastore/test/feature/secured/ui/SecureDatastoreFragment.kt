@@ -1,4 +1,4 @@
-package com.datastore.test.feature.proto.ui
+package com.datastore.test.feature.secured.ui
 
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
@@ -7,16 +7,15 @@ import com.datastore.test.DatastoreApp
 import com.datastore.test.R
 import com.datastore.test.core.base.BaseFragment
 import com.datastore.test.core.extensions.observe
-import com.datastore.test.databinding.FragmentProtoBinding
-import ru.surfstudio.android.easyadapter.EasyAdapter
+import com.datastore.test.databinding.FragmentSecuredDatastoreBinding
 import javax.inject.Inject
 
-class ProtoFragment : BaseFragment(R.layout.fragment_proto) {
+class SecureDatastoreFragment : BaseFragment(R.layout.fragment_secured_datastore) {
 
-    private val binding by viewBinding(FragmentProtoBinding::bind)
+    private val binding by viewBinding(FragmentSecuredDatastoreBinding::bind)
 
     @Inject
-    lateinit var viewModel: ProtoViewModel
+    lateinit var viewModel: SecureDatastoreViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,18 +23,23 @@ class ProtoFragment : BaseFragment(R.layout.fragment_proto) {
     }
 
     override fun initUI() = with(binding) {
-        mbClick.setOnClickListener { viewModel.onNewClick() }
+        binding.mbLogin.setOnClickListener {
+            viewModel.saveUserData(
+                editLogin.text.toString(),
+                editPassword.text.toString()
+            )
+        }
     }
 
     override fun onBindStates() = with(lifecycleScope) {
-        observe(viewModel.clicks) {
-            binding.textviewClicked.text = getString(R.string.clicked, it)
+        observe(viewModel.userData) {
+            binding.textviewResult.text = it
         }
     }
 
     private fun injectComponents() {
         DatastoreApp.component()
-            .protoBuilder()
+            .secureDataStoreBuilder()
             .build()
             .inject(this)
     }

@@ -1,19 +1,22 @@
 package com.datastore.test.feature.proto.ui
 
+import androidx.lifecycle.viewModelScope
 import com.datastore.test.core.base.BaseViewModel
-import com.datastore.test.feature.proto.domain.FetchQueriesUseCase
-import com.datastore.test.feature.proto.domain.SaveQueryUseCase
+import com.datastore.test.feature.proto.domain.FetchClicksUseCase
+import com.datastore.test.feature.proto.domain.NewClickUseCase
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class ProtoViewModel @Inject constructor(
-    private val saveQueryUseCase: SaveQueryUseCase,
-    private val fetchQueries: FetchQueriesUseCase
-
+    private val newClickUseCase: NewClickUseCase,
+    private val fetchClicksUseCase: FetchClicksUseCase
 ) : BaseViewModel() {
 
-    val queriesFlow = fetchQueries.fetchQueries()
+    val clicks: Flow<Int> = fetchClicksUseCase.invoke()
 
-    fun saveNewSearch(query: String) {
-        saveQueryUseCase.saveQuery(query)
+    fun onNewClick() {
+        viewModelScope.execute {
+            newClickUseCase.invoke()
+        }
     }
 }

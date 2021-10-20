@@ -1,9 +1,9 @@
 package com.datastore.test.feature.proto.di
 
-import com.datastore.test.feature.proto.data.local.QueriesLocalDataSource
-import com.datastore.test.feature.proto.data.local.QueriesLocalDataSourceImpl
-import com.datastore.test.feature.proto.data.repository.QueriesRepository
-import com.datastore.test.feature.proto.data.repository.QueriesRepositoryImpl
+import com.datastore.test.feature.proto.data.local.ClicksLocalDataSource
+import com.datastore.test.feature.proto.data.local.ClicksLocalDataSourceImpl
+import com.datastore.test.feature.proto.data.repository.ClicksRepository
+import com.datastore.test.feature.proto.data.repository.ClicksRepositoryImpl
 import dagger.Binds
 import dagger.Module
 
@@ -12,11 +12,11 @@ abstract class ProtoModule {
 
     @Binds
     internal abstract fun bindQueriesLocalDataSource(
-        lds: QueriesLocalDataSourceImpl
-    ): QueriesLocalDataSource
+        lds: ClicksLocalDataSourceImpl
+    ): ClicksLocalDataSource
 
     @Binds
     internal abstract fun bindQueriesRepository(
-        repository: QueriesRepositoryImpl
-    ): QueriesRepository
+        repository: ClicksRepositoryImpl
+    ): ClicksRepository
 }

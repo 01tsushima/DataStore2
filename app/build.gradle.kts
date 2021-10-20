@@ -1,10 +1,12 @@
 import org.gradle.api.JavaVersion.VERSION_1_8
 import Versions.navigation
+import com.google.protobuf.gradle.*
 
 plugins {
     id("com.android.application")
     id("kotlin-kapt")
     id("kotlin-android")
+    id("com.google.protobuf") version "0.8.17"
 }
 
 android {
@@ -40,6 +42,24 @@ android {
         jvmTarget = VERSION_1_8.toString()
     }
 }
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.14.0"
+    }
+
+    // Generates the java Protobuf-lite code for the Protobufs in this project. See
+    // https://github.com/google/protobuf-gradle-plugin#customizing-protobuf-compilation
+    // for more information.
+    generateProtoTasks {
+        all().forEach { task ->
+            task.plugins {
+                create("java") {
+                    option("lite")
+                }
+            }
+        }
+    }
+}
 
 dependencies {
 
@@ -70,7 +90,15 @@ dependencies {
     implementation("com.google.dagger:dagger:2.39.1")
     kapt("com.google.dagger:dagger-compiler:2.39.1")
 
-    implementation ("com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.0-beta01")
+    implementation("com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.0-beta01")
 
-    implementation ("ru.surfstudio.android:easyadapter:7.0.1")
+    implementation("ru.surfstudio.android:easyadapter:7.0.1")
+
+    //proto buff
+    implementation("androidx.datastore:datastore-core:1.0.0")
+    implementation("com.google.protobuf:protobuf-javalite:3.18.0")
+
+
+    implementation("com.google.crypto.tink:tink-android:1.6.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-protobuf:1.2.2")
 }
